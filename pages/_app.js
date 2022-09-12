@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+//Here we have to do internal import
+
+import {TodoListProvider} from "../context/TodolistApp";
+
+const  MyApp = ({ Component, pageProps }) => (
+  <TodoListProvider>
+    <div>
+    <Component {...pageProps} />
+    </div>
+  </TodoListProvider>
+);
 
 export default MyApp
